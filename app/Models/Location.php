@@ -9,6 +9,11 @@ class Location extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'city_id',
+        'greenhouse',
+    ];
+
     public function cities()
     {
         return $this->belongsTo(City::class);

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TemperatureRequest extends FormRequest
+class FirstTimeSetupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +25,9 @@ class TemperatureRequest extends FormRequest
     {
         return [
             'location_id' => 'required|exists:locations,id|numeric|digits_between:1,11',
-            'interval' => 'required|numeric|digits_between:1,11',
-            'degrees' => 'required|numeric|digits_between:1,11',
+            'sensor_type' => 'required|max:255',
+            'upper_limit' => 'required|numeric|digits_between:1,11',
+            'lower_limit' => 'required|numeric|digits_between:1,11',
         ];
     }
 }

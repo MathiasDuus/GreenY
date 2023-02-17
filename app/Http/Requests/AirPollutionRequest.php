@@ -24,7 +24,9 @@ class AirPollutionRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required'],
+            'severity' => 'required|max:255',
+            'location_id' => 'required|exists:locations,id|numeric|digits_between:1,11',
+            'interval' => 'required|numeric|digits_between:1,11',
         ];
     }
 }

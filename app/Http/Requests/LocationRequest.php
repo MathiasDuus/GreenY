@@ -24,7 +24,8 @@ class LocationRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required'],
+            'city_id' => 'required|exists:cities,id|numeric|digits_between:1,11',
+            'greenhouse' => 'required|max:255',
         ];
     }
 }

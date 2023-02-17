@@ -24,7 +24,11 @@ class LightRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required'],
+            'location_id' => 'required|exists:locations,id|numeric|digits_between:1,11',
+            'interval' => 'required|numeric|digits_between:1,11',
+            'manual_override' => 'required|boolean',
+            'day_start' => 'required|date_format:H:i:s',
+            'day_end' => 'required|date_format:H:i:s|after:day_start',
         ];
     }
 }

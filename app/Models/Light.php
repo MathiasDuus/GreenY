@@ -9,6 +9,14 @@ class Light extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'location_id',
+        'manual_override',
+        'day_start',
+        'day_end',
+        'interval',
+    ];
+
     public function locations()
     {
         return $this->belongsTo(Location::class);

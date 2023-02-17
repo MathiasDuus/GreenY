@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FirstTimeSetupControllerAPI;
 use App\Http\Controllers\AirPollutionControllerAPI;
 use App\Http\Controllers\TemperatureControllerAPI;
 use App\Http\Controllers\LocationControllerAPI;
@@ -102,5 +103,18 @@ Route::name('air-pollutions.')->controller(AirPollutionControllerAPI::class)->pr
     Route::get('/{airPollution}', 'show')->name('show');
     Route::patch('/{airPollution}', 'update')->name('update');
     Route::delete('/{airPollution}', 'destroy')->name('destroy');
+});
+
+/*
+|--------------------------------------------------------------------------
+| FirstTimeSetup endpoints
+|--------------------------------------------------------------------------
+ */
+Route::name('first-time-setups.')->controller(FirstTimeSetupControllerAPI::class)->prefix('first-time-setups')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::post('/', 'store')->name('create');
+    Route::get('/{firstTimeSetup}', 'show')->name('show');
+    Route::patch('/{firstTimeSetup}', 'update')->name('update');
+    Route::delete('/{firstTimeSetup}', 'destroy')->name('destroy');
 });
 
