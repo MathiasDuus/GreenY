@@ -12,7 +12,6 @@ class AirPollution extends Model
     protected $fillable = [
         'location_id',
         'severity',
-        'interval',
     ];
 
 

@@ -20,7 +20,6 @@ class TemperatureFactory extends Factory
         return [
             'location_id' => $this->faker->randomElement($location),
             'degrees' => $this->faker->numberBetween(-10, 40),
-            'interval' => $this->faker->numberBetween(0, 90),
         ];
     }
 }

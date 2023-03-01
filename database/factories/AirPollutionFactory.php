@@ -21,7 +21,6 @@ class AirPollutionFactory extends Factory
         return [
             'location_id' => $this->faker->randomElement($location),
             'severity' => $this->faker->randomElement($severities),
-            'interval' => $this->faker->numberBetween(0, 90),
         ];
     }
 }

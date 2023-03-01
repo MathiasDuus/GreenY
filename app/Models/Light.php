@@ -12,9 +12,6 @@ class Light extends Model
     protected $fillable = [
         'location_id',
         'manual_override',
-        'day_start',
-        'day_end',
-        'interval',
     ];
 
     public function locations()

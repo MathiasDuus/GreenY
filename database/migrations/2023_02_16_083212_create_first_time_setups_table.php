@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('sensor_type');
             $table->integer('upper_limit');
             $table->integer('lower_limit');
+            $table->unsignedInteger('interval');
             $table->timestamps();
         });
     }

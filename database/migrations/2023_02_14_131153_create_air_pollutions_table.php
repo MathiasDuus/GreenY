@@ -18,7 +18,6 @@ return new class extends Migration {
 
             $table->foreign('location_id')->references('id')->on('locations');
             $table->string('severity');
-            $table->unsignedInteger('interval');
             $table->timestamps();
         });
     }

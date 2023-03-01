@@ -20,7 +20,6 @@ class HumidityFactory extends Factory
         return [
             'location_id' => $this->faker->randomElement($location),
             'percentage' => $this->faker->numberBetween(0, 100),
-            'interval' => $this->faker->numberBetween(0, 90),
         ];
     }
 }

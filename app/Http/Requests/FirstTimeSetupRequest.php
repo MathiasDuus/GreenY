@@ -28,6 +28,7 @@ class FirstTimeSetupRequest extends FormRequest
             'sensor_type' => 'required|max:255',
             'upper_limit' => 'required|numeric|digits_between:1,11',
             'lower_limit' => 'required|numeric|digits_between:1,11',
+            'interval' => 'required|numeric|digits_between:1,11',
         ];
     }
 }

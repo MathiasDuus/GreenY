@@ -18,9 +18,6 @@ return new class extends Migration {
 
             $table->foreign('location_id')->references('id')->on('locations');
             $table->boolean('manual_override');
-            $table->time('day_start');
-            $table->time('day_end');
-            $table->unsignedInteger('interval');
             $table->timestamps();
         });
     }

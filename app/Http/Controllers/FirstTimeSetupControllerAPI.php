@@ -11,6 +11,27 @@ use App\Http\Resources\Collections\FirstTimeSetupCollection;
 class FirstTimeSetupControllerAPI extends Controller
 {
     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\FirstTimeSetup  $firstTimeSetup
+     * @return
+     */
+    public function location_type(FirstTimeSetup $firstTimeSetup)
+    {
+        $location_id = request('location_id');
+        $sensor_type = request('sensor_type');
+
+        $search = FirstTimeSetup::where('location_id', 'like', "%{$location_id}%")
+            ->Where('sensor_type', 'like', "%{$sensor_type}%")
+            ->get();
+
+        return response()->json([
+            'data' => $search
+        ]);
+
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return FirstTimeSetupCollection

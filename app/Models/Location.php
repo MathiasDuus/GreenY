@@ -38,4 +38,9 @@ class Location extends Model
     {
         return $this->hasMany(AirPollution::class);
     }
+
+    public function first_time_setups()
+    {
+        return $this->hasMany(FirstTimeSetup::class);
+    }
 }
